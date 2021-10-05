@@ -1,0 +1,19 @@
+{
+    "name": "indie.hoomanjcode.joystick-tools",
+    "version": "0.0.1",
+    "unity": "2020.1",
+    "displayName": "JoyStick Tools",
+    "description": "You can add joystick in a fast way.",
+    "keywords": [
+        "joystick",
+        "input",
+        "controll",
+        "Tools"
+    ],
+    "author": {
+        "name": "Hooman Jalalpoor",
+        "email": "Hooman.Jalalpoor@gmail.com",
+        "url": "https://github.com/HoomanJCode"
+    },
+    "dependencies": {}
+}
