@@ -7,7 +7,7 @@ public class MovementJoyStick : MonoBehaviour
     {
         None,
         Began,
-        Moved,
+        Moving,
         Ended
     }
 
@@ -34,7 +34,7 @@ public class MovementJoyStick : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Status != StatusEnum.Moved)
+        if (Status != StatusEnum.Moving)
         {
             Status = StatusEnum.None;
             _value.x = 0;
@@ -61,7 +61,7 @@ public class MovementJoyStick : MonoBehaviour
                     Vector2 initialPos = joyStickBackgroundCircle.position;
                     joyStickFinger.position =
                         Vector2.ClampMagnitude(touch.position - initialPos, maxClampMagnitude) + initialPos;
-                    Status = StatusEnum.Moved;
+                    Status = StatusEnum.Moving;
                     _value = (Vector2) joyStickFinger.position - initialPos;
                     break;
                 case TouchPhase.Ended:
@@ -107,7 +107,7 @@ public class MovementJoyStick : MonoBehaviour
                 joyStickFinger.position =
                     Vector2.ClampMagnitude((Vector2) Input.mousePosition - initialPos, maxClampMagnitude) +
                     initialPos;
-                Status = StatusEnum.Moved;
+                Status = StatusEnum.Moving;
                 _value = (Vector2) joyStickFinger.position - initialPos;
             }
         }
